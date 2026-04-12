@@ -1,0 +1,10 @@
+{
+  "dbt.dbtIntegration": "fusion",
+  "dbt.environmentVariables": {
+    "PATH": "C:\\Users\\bodhy\\.local\\bin;${env:PATH}"
+  },
+  "files.associations": {
+    "*.sql": "jinja-sql",
+    "*.yml": "jinja-yaml"
+  }
+}
