@@ -1,5 +1,5 @@
 {
-  "dbt.dbtIntegration": "fusion",
+  "dbt.dbtIntegration": "cloud",
   "dbt.environmentVariables": {
     "PATH": "C:\\Users\\bodhy\\.local\\bin;${env:PATH}"
   },
