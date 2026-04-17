@@ -6,5 +6,17 @@
   "files.associations": {
     "*.sql": "jinja-sql",
     "*.yml": "jinja-yaml"
-  }
+  },
+  "sqltools.useNodeRuntime": true,
+  "sqltools.connections": [
+    {
+      "name": "BigQuery",
+      "authenticator": "SERVICE_ACCOUNT",
+      "location": "us-east-4",
+      "previewLimit": 100,
+      "driver": "BigQuery",
+      "keyfile": "/Users/izzyyang/Desktop/DE Career/data-engineering-zoomcamp/_keys and secrets/kestra-sandbox-486905-05c904757f27.json"
+    }
+  ],
+  "dbt.dbtPythonPathOverride": "\"); print(sys.executable); print(\""
 }
