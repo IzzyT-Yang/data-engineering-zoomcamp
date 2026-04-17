@@ -1,7 +1,7 @@
 version: 2
 
 sources: # One source = one database & one schema, but can have multiple tables
-  - name: raw_data # arbitrary name for the source
+  - name: raw # arbitrary name for the source
     description: "Raw data from the NYC taxi trips" # optional description of the source
     database: kestra-sandbox-486905 # this is the GCP project id. If omitted, dbt will use the project specified in project.yml (if local) or dbt cloud (if using that)
     schema: zoomcamp # this is the dataset in the bigquery database
