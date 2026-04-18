@@ -55,7 +55,8 @@ left join {{ ref('dim_zones') }} as pz
 left join {{ ref('dim_zones') }} as dz
     on trips.dropoff_location_id = dz.location_id
 
+where trips.pickup_datetime >= '2019-01-01'
+
 {% if is_incremental() %}
-  -- Only process new trips based on pickup datetime
-  where trips.pickup_datetime > (select max(pickup_datetime) from {{ this }})
+  and trips.pickup_datetime > (select max(pickup_datetime) from {{ this }})
 {% endif %}
