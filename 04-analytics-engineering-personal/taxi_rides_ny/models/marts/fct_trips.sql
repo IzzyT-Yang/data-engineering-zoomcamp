@@ -56,6 +56,7 @@ left join {{ ref('dim_zones') }} as dz
     on trips.dropoff_location_id = dz.location_id
 
 where trips.pickup_datetime >= '2019-01-01'
+limit 10000
 
 {% if is_incremental() %}
   and trips.pickup_datetime > (select max(pickup_datetime) from {{ this }})
