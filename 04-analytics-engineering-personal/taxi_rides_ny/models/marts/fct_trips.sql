@@ -48,7 +48,7 @@ select
     trips.payment_type,
     trips.payment_type_description
 
-from {{ ref('int_trips') }} as trips
+from (select * from {{ ref('int_trips') }} limit 10000) as trips
 -- LEFT JOIN preserves all trips even if zone information is missing or unknown
 left join {{ ref('dim_zones') }} as pz
     on trips.pickup_location_id = pz.location_id
@@ -60,5 +60,3 @@ where trips.pickup_datetime >= '2019-01-01'
 {% if is_incremental() %}
   and trips.pickup_datetime > (select max(pickup_datetime) from {{ this }})
 {% endif %}
-
-limit 10000
